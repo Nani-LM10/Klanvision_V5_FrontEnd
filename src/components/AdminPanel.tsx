@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   LayoutDashboard, Users, FileText, MessageSquare,
   Settings, LogOut, Search, Bell, Plus,
-  TrendingUp, CheckCircle2, Clock, Calendar, Mail,
+  CheckCircle2, Clock, Calendar, Mail,
   ShieldCheck, Filter, Edit2, Trash2, UserPlus,
   LayoutPanelLeft, Activity, Zap, Star, Rocket, Globe,
   Shield, Check, X, Lock, Send, Paperclip, CornerUpLeft, CheckCheck, Eye, EyeOff, Upload
@@ -1629,6 +1629,9 @@ function ProjectsView({ projects, onAddClick, onEditClick, onDeleteClick, search
 
               <div style={{ display: 'flex', gap: 12, marginTop: 'auto' }}>
                 <button onClick={() => onEditClick(p)} style={{ flex: 1, padding: '14px', borderRadius: 16, background: 'rgba(255,255,255,0.05)', border: 'none', color: 'white', fontSize: 14, fontWeight: 800, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}><Edit2 size={16} /> Manage</button>
+                <button onClick={() => onDeleteClick(p.id)} style={{ width: 48, height: 48, borderRadius: 16, background: 'rgba(239, 68, 68, 0.1)', border: 'none', color: '#F87171', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Trash2 size={18} />
+                </button>
               </div>
             </motion.div>
           ))}
