@@ -76,7 +76,6 @@ const testimonials = [
 ];
 
 const N = testimonials.length;   // 6
-const VISIBLE = 3;
 const GAP = 24;                   // px gap between cards
 // Duplicate cards so the track appears infinite: [...originals, ...originals]
 const track = [...testimonials, ...testimonials];

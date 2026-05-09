@@ -244,7 +244,7 @@ export default function AdminPanel() {
       email: 'group@klanvision.com'
     };
     setChatGroups(prev => [...prev, newGroup]);
-    addActivity('System', 'Group Created', 'user', 'success', `Created group ${name}`);
+    addActivity('System', 'Group Created', 'system', 'success', `Created group ${name}`);
   };
 
   const [blogs, setBlogs] = useState<Blog[]>([
@@ -463,7 +463,7 @@ export default function AdminPanel() {
       }
     } else {
       setLoginError('Invalid security credentials provided.');
-      addActivity('System', 'Failed Login', 'security', 'error', `Invalid attempt for ${loginForm.email}`);
+      addActivity('System', 'Failed Login', 'security', 'warning', `Invalid attempt for ${loginForm.email}`);
     }
   };
 
@@ -1002,7 +1002,7 @@ export default function AdminPanel() {
             setBlogCategoryFilter={setBlogCategoryFilter}
           />
           <AnimatePresence mode="wait">
-            {activeTab === 'dashboard' && <DashboardView projects={projects} users={users} blogs={blogs} activities={activities} />}
+            {activeTab === 'dashboard' && <DashboardView projects={projects} users={users} blogs={blogs} activities={activities} setActiveTab={setActiveTab} />}
             {activeTab === 'users' && (
               <UsersView
                 users={users}
@@ -1087,6 +1087,7 @@ export default function AdminPanel() {
                 maintenanceMode={maintenanceMode} setMaintenanceMode={setMaintenanceMode}
                 platformLogo={platformLogo} setPlatformLogo={setPlatformLogo}
                 companyName={companyName} setCompanyName={setCompanyName}
+                addActivity={addActivity}
               />
             )}
             {activeTab === 'activity' && <ActivityView activities={activities} />}
@@ -1710,6 +1711,9 @@ function BlogsView({ blogs, onAddClick, onEditClick, onDeleteClick, searchQuery,
                   <button onClick={() => onEditClick(blog)} style={{ flex: 1, padding: '12px', borderRadius: 14, background: 'rgba(255,255,255,0.05)', border: 'none', color: 'white', fontSize: 13, fontWeight: 800, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
                     <Edit2 size={16} /> Edit
                   </button>
+                  <button onClick={() => onDeleteClick(blog.id)} style={{ width: 44, height: 44, borderRadius: 14, background: 'rgba(239, 68, 68, 0.1)', border: 'none', color: '#F87171', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Trash2 size={18} />
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -2322,7 +2326,8 @@ function SettingsView({
   twoFactor, setTwoFactor,
   maintenanceMode, setMaintenanceMode,
   platformLogo, setPlatformLogo,
-  companyName, setCompanyName
+  companyName, setCompanyName,
+  addActivity
 }: any) {
   const [activeSection, setActiveSection] = useState('Interface');
   const [saveStatus, setSaveStatus] = useState<string | null>(null);
@@ -2770,7 +2775,7 @@ function ActivityView({ activities }: { activities: ActivityLog[] }) {
   );
 }
 
-function DashboardView({ projects, users, activities }: any) {
+function DashboardView({ projects, users, activities, setActiveTab }: any) {
   const deliveredCount = projects.filter((p: any) => p.status === 'Delivered').length;
   const inProgressCount = projects.filter((p: any) => p.status === 'In Progress' || p.status === 'Active').length;
   const upcomingCount = projects.filter((p: any) => p.status === 'Planning' || p.status === 'Upcoming').length;

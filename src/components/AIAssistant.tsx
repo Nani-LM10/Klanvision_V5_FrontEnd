@@ -241,33 +241,35 @@ export default function AIAssistant({ isOpen, onToggle, isVisible }: AIAssistant
         )}
       </AnimatePresence>
 
-      {/* Chat Window */}
+      {/* Chat Window Popup */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="ai-chat-sidebar"
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            className="ai-chat-popup"
             style={{
+              position: 'fixed',
+              bottom: '100px',
+              right: '24px',
               width: '400px',
-              maxWidth: '100vw',
-              height: '100vh',
-              overflow: 'hidden',
+              maxWidth: 'calc(100vw - 48px)',
+              height: '600px',
+              maxHeight: 'calc(100vh - 140px)',
               display: 'flex', flexDirection: 'column',
               fontFamily: "'Inter', sans-serif",
               background: 'var(--bg-surface)',
-              borderLeft: '1px solid var(--border-main)',
-              boxShadow: '-10px 0 30px rgba(0,0,0,0.15)',
-              position: 'fixed',
-              top: 0,
-              right: 0,
-              zIndex: 10001
+              borderRadius: '24px',
+              border: '1px solid var(--border-main)',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+              zIndex: 10001,
+              overflow: 'hidden'
             }}
           >
             {/* Header */}
-            <div style={{ padding: '20px 24px', background: 'linear-gradient(135deg, #4F46E5, #7C3AED)', color: 'white', display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{ padding: '16px 24px', background: 'linear-gradient(135deg, #4F46E5, #7C3AED)', color: 'white', display: 'flex', alignItems: 'center', gap: 12 }}>
               <div style={{ width: 40, height: 40, borderRadius: 12, background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Bot size={24} />
               </div>
@@ -281,20 +283,20 @@ export default function AIAssistant({ isOpen, onToggle, isVisible }: AIAssistant
             </div>
 
             {/* Messages Area */}
-            <div ref={scrollRef} style={{ flex: 1, overflowY: 'auto', padding: '24px', display: 'flex', flexDirection: 'column', gap: 16, background: 'var(--bg-surface-soft)' }}>
+            <div ref={scrollRef} style={{ flex: 1, overflowY: 'auto', padding: '20px', display: 'flex', flexDirection: 'column', gap: 12, background: 'var(--bg-surface-soft)' }}>
               {messages.map((msg) => (
-                <div key={msg.id} style={{ display: 'flex', flexDirection: 'column', alignItems: msg.sender === 'user' ? 'flex-end' : 'flex-start', gap: 8 }}>
+                <div key={msg.id} style={{ display: 'flex', flexDirection: 'column', alignItems: msg.sender === 'user' ? 'flex-end' : 'flex-start', gap: 6 }}>
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     style={{
                       maxWidth: '85%',
-                      padding: '12px 18px',
-                      borderRadius: msg.sender === 'user' ? '20px 20px 4px 20px' : '20px 20px 20px 4px',
+                      padding: '10px 16px',
+                      borderRadius: msg.sender === 'user' ? '18px 18px 4px 18px' : '18px 18px 18px 4px',
                       background: msg.sender === 'user' ? '#4F46E5' : 'var(--bg-surface)',
                       color: msg.sender === 'user' ? 'white' : 'var(--text-main)',
-                      fontSize: 14,
-                      lineHeight: 1.6,
+                      fontSize: '13.5px',
+                      lineHeight: 1.5,
                       boxShadow: '0 2px 5px rgba(0,0,0,0.05)',
                       border: msg.sender === 'user' ? 'none' : '1px solid var(--border-main)',
                       whiteSpace: 'pre-wrap'
@@ -305,7 +307,7 @@ export default function AIAssistant({ isOpen, onToggle, isVisible }: AIAssistant
                   
                   {/* Quick Reply Options */}
                   {msg.options && step !== 'COMPLETE' && (
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 4 }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 4 }}>
                       {msg.options.map((opt) => (
                         <motion.button
                           key={opt}
@@ -313,12 +315,12 @@ export default function AIAssistant({ isOpen, onToggle, isVisible }: AIAssistant
                           whileTap={{ scale: 0.95 }}
                           onClick={() => handleOptionClick(opt)}
                           style={{
-                            padding: '8px 16px',
+                            padding: '6px 14px',
                             borderRadius: '50px',
                             border: '1px solid #4F46E5',
                             background: 'transparent',
                             color: '#4F46E5',
-                            fontSize: '12px',
+                            fontSize: '11px',
                             fontWeight: 600,
                             cursor: 'pointer',
                             transition: 'all 0.2s ease'
@@ -333,17 +335,17 @@ export default function AIAssistant({ isOpen, onToggle, isVisible }: AIAssistant
               ))}
               
               {isTyping && (
-                <div style={{ alignSelf: 'flex-start', display: 'flex', gap: 4, padding: '12px 16px', background: 'var(--bg-surface)', borderRadius: 20, border: '1px solid var(--border-main)' }}>
-                    <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1, delay: 0 }} style={{ width: 6, height: 6, background: 'var(--text-muted)', borderRadius: '50%' }} />
-                    <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1, delay: 0.2 }} style={{ width: 6, height: 6, background: 'var(--text-muted)', borderRadius: '50%' }} />
-                    <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1, delay: 0.4 }} style={{ width: 6, height: 6, background: 'var(--text-muted)', borderRadius: '50%' }} />
+                <div style={{ alignSelf: 'flex-start', display: 'flex', gap: 4, padding: '10px 14px', background: 'var(--bg-surface)', borderRadius: 15, border: '1px solid var(--border-main)' }}>
+                    <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1, delay: 0 }} style={{ width: 5, height: 5, background: 'var(--text-muted)', borderRadius: '50%' }} />
+                    <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1, delay: 0.2 }} style={{ width: 5, height: 5, background: 'var(--text-muted)', borderRadius: '50%' }} />
+                    <motion.div animate={{ opacity: [0.3, 1, 0.3] }} transition={{ repeat: Infinity, duration: 1, delay: 0.4 }} style={{ width: 5, height: 5, background: 'var(--text-muted)', borderRadius: '50%' }} />
                 </div>
               )}
             </div>
 
             {/* Input Area */}
             {step !== 'COMPLETE' && (
-              <div style={{ padding: '20px', borderTop: '1px solid var(--border-main)', background: 'var(--bg-surface)' }}>
+              <div style={{ padding: '16px', borderTop: '1px solid var(--border-main)', background: 'var(--bg-surface)' }}>
                 <div style={{ display: 'flex', gap: 10 }}>
                   <input
                     value={inputValue}
@@ -352,11 +354,11 @@ export default function AIAssistant({ isOpen, onToggle, isVisible }: AIAssistant
                     placeholder="Type your message..."
                     style={{ 
                       flex: 1, 
-                      padding: '12px 18px', 
+                      padding: '10px 16px', 
                       borderRadius: 50, 
                       border: '1.5px solid var(--border-main)', 
                       outline: 'none', 
-                      fontSize: 14, 
+                      fontSize: '13px', 
                       background: 'var(--bg-surface-soft)', 
                       color: 'var(--text-main)' 
                     }}
@@ -366,14 +368,14 @@ export default function AIAssistant({ isOpen, onToggle, isVisible }: AIAssistant
                     whileTap={{ scale: 0.9 }}
                     onClick={() => handleSend()}
                     style={{ 
-                      width: 44, height: 44, borderRadius: '50%', 
+                      width: 40, height: 40, borderRadius: '50%', 
                       background: '#4F46E5', color: 'white', 
                       border: 'none', cursor: 'pointer', 
                       display: 'flex', alignItems: 'center', justifyContent: 'center', 
-                      boxShadow: '0 10px 15px rgba(79, 70, 229, 0.2)' 
+                      boxShadow: '0 5px 15px rgba(79, 70, 229, 0.2)' 
                     }}
                   >
-                    <Send size={20} />
+                    <Send size={18} />
                   </motion.button>
                 </div>
               </div>
@@ -390,6 +392,21 @@ export default function AIAssistant({ isOpen, onToggle, isVisible }: AIAssistant
           bottom: 24px;
           right: 24px;
           z-index: 10000;
+        }
+        @media (max-width: 480px) {
+          .ai-chat-popup {
+            bottom: 0 !important;
+            right: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            border-radius: 0 !important;
+          }
+          .ai-assistant-toggle {
+            bottom: 20px !important;
+            right: 20px !important;
+          }
         }
       `}</style>
     </>

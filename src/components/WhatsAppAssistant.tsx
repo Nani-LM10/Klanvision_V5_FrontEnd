@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, User, CheckCircle2, MessageCircle, Phone, Mail, Calendar, Briefcase, IndianRupee, Target } from 'lucide-react';
+import { X, Send } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 // ── Configuration ──
@@ -264,35 +264,37 @@ export default function WhatsAppAssistant({ isOpen, onToggle, isVisible }: Whats
         )}
       </AnimatePresence>
 
-      {/* Chat Window */}
+      {/* Chat Window Popup */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="whatsapp-chat-sidebar"
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            className="whatsapp-chat-popup"
             style={{
+              position: 'fixed',
+              bottom: '190px',
+              right: '24px',
               width: '360px',
-              maxWidth: '100vw',
-              height: '100vh',
+              maxWidth: 'calc(100vw - 48px)',
+              height: '600px',
+              maxHeight: 'calc(100vh - 250px)',
               overflow: 'hidden',
               display: 'flex', flexDirection: 'column',
               fontFamily: "'Inter', sans-serif",
               background: 'var(--bg-surface)',
-              borderLeft: '1px solid var(--border-main)',
-              boxShadow: '-10px 0 30px rgba(0,0,0,0.15)',
-              position: 'fixed',
-              top: 0,
-              right: 0,
+              borderRadius: '24px',
+              border: '1px solid var(--border-main)',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
               zIndex: 10001
             }}
           >
 
             {/* Banner Header */}
             <div style={{ 
-              padding: '24px', 
+              padding: '20px 24px', 
               background: 'linear-gradient(135deg, #128C7E, #25D366)', 
               color: 'white', 
               display: 'flex', 
@@ -329,7 +331,7 @@ export default function WhatsAppAssistant({ isOpen, onToggle, isVisible }: Whats
                       borderRadius: msg.sender === 'user' ? '15px 15px 0 15px' : '15px 15px 15px 0',
                       background: msg.sender === 'user' ? '#DCF8C6' : 'white',
                       color: '#303030',
-                      fontSize: 13,
+                      fontSize: '13px',
                       lineHeight: 1.5,
                       boxShadow: '0 1px 1px rgba(0,0,0,0.1)',
                       whiteSpace: 'pre-wrap',
@@ -423,7 +425,7 @@ export default function WhatsAppAssistant({ isOpen, onToggle, isVisible }: Whats
                       borderRadius: 20, 
                       border: '1.5px solid var(--border-main)', 
                       outline: 'none', 
-                      fontSize: 13, 
+                      fontSize: '13px', 
                       background: 'var(--bg-surface-soft)', 
                       color: 'var(--text-main)' 
                     }}
@@ -451,6 +453,17 @@ export default function WhatsAppAssistant({ isOpen, onToggle, isVisible }: Whats
       <style>{`
         ::-webkit-scrollbar { width: 3px; }
         ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
+        @media (max-width: 480px) {
+          .whatsapp-chat-popup {
+            bottom: 0 !important;
+            right: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            border-radius: 0 !important;
+          }
+        }
       `}</style>
     </>
   );
