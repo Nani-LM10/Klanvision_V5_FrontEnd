@@ -6,11 +6,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-<<<<<<< HEAD
-=======
 import { ShieldCheck, Sun, Moon } from 'lucide-react';
 
->>>>>>> 681f246 (Launch version-v5)
 
 // Navigation items – label shown in nav, id used for scrollTo target
 const navItems = [
@@ -23,9 +20,6 @@ const navItems = [
   { label: 'CAREERS',   id: 'careers'   },
 ];
 
-<<<<<<< HEAD
-export default function Navbar() {
-=======
 interface NavbarProps {
   theme: 'light' | 'dark';
   toggleTheme: () => void;
@@ -33,7 +27,6 @@ interface NavbarProps {
 
 export default function Navbar({ theme, toggleTheme }: NavbarProps) {
 
->>>>>>> 681f246 (Launch version-v5)
   const [mobileOpen, setMobileOpen]       = useState(false);   // mobile menu toggle
   const [searchQuery, setSearchQuery]     = useState('');       // search input value
   const [isSearchOpen, setIsSearchOpen]   = useState(false);   // dropdown visibility
@@ -116,13 +109,10 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
 
   // Smooth scroll to a section by id and close mobile menu
   const scrollTo = (id: string) => {
-<<<<<<< HEAD
-=======
     if (id === 'careers') {
       window.location.href = '/careers';
       return;
     }
->>>>>>> 681f246 (Launch version-v5)
     if (window.location.pathname !== '/') {
       window.location.href = `https://www.klanvision.com/#${id}`;
       return;
@@ -153,29 +143,19 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
         {/* White pill container */}
         <div style={{
           width: '100%', maxWidth: 1280,
-<<<<<<< HEAD
-          background: 'white',
-=======
           background: 'var(--bg-surface)',
 
->>>>>>> 681f246 (Launch version-v5)
           borderRadius: 40,
           boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           paddingLeft: 12, paddingRight: 0,
           pointerEvents: 'auto',
-<<<<<<< HEAD
-          height: 64, border: '1px solid #f3f4f6'
-        }}>
-          {/* Logo – scales in, scrolls to hero on click */}
-=======
           height: 64, border: '1px solid var(--border-main)',
           transition: 'all 0.3s ease'
         }}>
 
           {/* Logo – scales in, scrolls to hero on click */}
 
->>>>>>> 681f246 (Launch version-v5)
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -300,34 +280,6 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
             </div>
 
             {/* Request for Quote – orange pill CTA, flush with the right edge */}
-<<<<<<< HEAD
-            <motion.button
-              whileHover={{ opacity: 0.95 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => scrollTo('contact')}
-              style={{
-                background: '#FF6B35', color: 'white', border: 'none',
-                height: 'calc(100% + 2px)', padding: '0 32px', cursor: 'pointer',
-                display: 'flex', alignItems: 'center', gap: 12,
-                fontSize: 14, fontWeight: 700, fontFamily: 'sans-serif',
-                borderTopRightRadius: 40, borderBottomRightRadius: 40,
-                marginRight: -1, marginTop: -1, marginBottom: -1,
-                zIndex: 10
-              }}
-            >
-              Request for Quote
-              <div style={{
-                width: 24, height: 24, background: 'white', borderRadius: '50%',
-                display: 'flex', alignItems: 'center', justifyContent: 'center'
-              }}>
-                <svg width="12" height="12" fill="none" stroke="#FF6B35" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </div>
-            </motion.button>
-          </div>
-
-=======
             {/* Admin Secure Login – multicolor animated CTA */}
             <motion.button
               whileHover={{ scale: 1.02 }}
@@ -388,7 +340,6 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
           </div>
 
 
->>>>>>> 681f246 (Launch version-v5)
           {/* Hamburger – shown only on mobile (≤1024px) */}
           <button
             id="hamburger-btn"

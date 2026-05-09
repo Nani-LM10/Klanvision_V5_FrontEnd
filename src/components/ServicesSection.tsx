@@ -217,12 +217,8 @@ export default function ServicesSection() {
   const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
 
   return (
-<<<<<<< HEAD
-    <section id="services" style={{ background: '#F5F6FA', padding: '80px 0' }}>
-=======
     <section id="services" style={{ background: 'var(--bg-main)', padding: '80px 0', transition: 'background 0.3s ease' }}>
 
->>>>>>> 681f246 (Launch version-v5)
       <div className="container">
 
         {/* ── Section Header */}
@@ -234,12 +230,8 @@ export default function ServicesSection() {
         >
           <div className="accent-bar" />
           <h2
-<<<<<<< HEAD
-            className="font-bold tracking-tight text-[#1F2937]"
-=======
             className="font-bold tracking-tight text-[var(--text-main)]"
 
->>>>>>> 681f246 (Launch version-v5)
             style={{
               fontFamily: "'Poppins', sans-serif",
               fontSize: 'clamp(1.4rem, 2.8vw, 2.8rem)',
@@ -251,16 +243,10 @@ export default function ServicesSection() {
           >
             Services &amp; <span className="gradient-text">Solutions</span>
           </h2>
-<<<<<<< HEAD
-          <p style={{ color: '#6B7280', fontSize: 16, maxWidth: 580, margin: '0 auto', lineHeight: 1.7, fontFamily: "'Roboto','Poppins',sans-serif" }}>
-            Embark on a transformative journey with Klanvision's robust technology services to elevate your business to new heights.
-          </p>
-=======
           <p style={{ color: 'var(--text-muted)', fontSize: 16, maxWidth: 580, margin: '0 auto', lineHeight: 1.7, fontFamily: "'Roboto','Poppins',sans-serif" }}>
             Embark on a transformative journey with Klanvision's robust technology services to elevate your business to new heights.
           </p>
 
->>>>>>> 681f246 (Launch version-v5)
         </motion.div>
 
         {/* ── Cards Grid */}
@@ -284,10 +270,6 @@ export default function ServicesSection() {
                 if (s.title === 'API Integration') window.location.href = 'https://www.klanvision.com/api-integration';
               }}
               className="card"
-<<<<<<< HEAD
-              style={{ padding: '32px 24px', position: 'relative', overflow: 'hidden', cursor: 'pointer', display: 'flex', flexDirection: 'column' }}
-            >
-=======
               style={{ 
                 padding: '32px 24px', 
                 position: 'relative', 
@@ -302,7 +284,6 @@ export default function ServicesSection() {
               }}
             >
 
->>>>>>> 681f246 (Launch version-v5)
               {/* Top color accent */}
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: s.color, borderRadius: '20px 20px 0 0' }} />
 
@@ -338,14 +319,9 @@ export default function ServicesSection() {
                 </div>
               </motion.div>
 
-<<<<<<< HEAD
-              <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 15, marginBottom: 10, lineHeight: 1.3, color: '#1F2937' }}>{s.title}</h3>
-              <p style={{ color: '#6B7280', fontSize: 13, lineHeight: 1.65, marginBottom: 0, fontFamily: "'Roboto','Poppins',sans-serif", flexGrow: 1 }}>{s.desc}</p>
-=======
               <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 15, marginBottom: 10, lineHeight: 1.3, color: 'var(--text-main)' }}>{s.title}</h3>
               <p style={{ color: 'var(--text-muted)', fontSize: 13, lineHeight: 1.65, marginBottom: 0, fontFamily: "'Roboto','Poppins',sans-serif", flexGrow: 1 }}>{s.desc}</p>
 
->>>>>>> 681f246 (Launch version-v5)
 
               {/* Read More – text + round animated arrow circle */}
               <div 
@@ -414,27 +390,17 @@ export default function ServicesSection() {
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               onClick={(e) => e.stopPropagation()}
               style={{
-<<<<<<< HEAD
-                background: 'white',
-=======
                 background: 'var(--bg-surface)',
->>>>>>> 681f246 (Launch version-v5)
                 maxWidth: 600,
                 width: '100%',
                 borderRadius: 24,
                 padding: '40px',
                 position: 'relative',
-<<<<<<< HEAD
-                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
-                overflow: 'hidden'
-              }}
-=======
                 boxShadow: 'var(--card-shadow)',
                 border: '1px solid var(--border-main)',
                 overflow: 'hidden'
               }}
 
->>>>>>> 681f246 (Launch version-v5)
             >
               {/* Accent corner */}
               <div style={{ position: 'absolute', top: 0, right: 0, width: 150, height: 150, background: `radial-gradient(circle at top right, ${selectedService.glow}, transparent)`, pointerEvents: 'none' }} />
@@ -444,16 +410,10 @@ export default function ServicesSection() {
                   <div style={{ padding: 12, borderRadius: 16, background: `${selectedService.color}10`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <selectedService.Svg />
                   </div>
-<<<<<<< HEAD
-                  <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 24, color: '#1F2937', margin: 0 }}>
-                    {selectedService.title}
-                  </h3>
-=======
                   <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 24, color: 'var(--text-main)' , margin: 0 }}>
                     {selectedService.title}
                   </h3>
 
->>>>>>> 681f246 (Launch version-v5)
                 </div>
                 <button 
                   onClick={() => setSelectedService(null)}
@@ -478,11 +438,7 @@ export default function ServicesSection() {
 
               <div style={{ borderLeft: `4px solid ${selectedService.color}`, paddingLeft: 20, marginBottom: 32 }}>
                 <p style={{ 
-<<<<<<< HEAD
-                  color: '#4B5563', 
-=======
                   color: 'var(--text-muted)', 
->>>>>>> 681f246 (Launch version-v5)
                   fontSize: 16, 
                   lineHeight: 1.8, 
                   fontFamily: "'Roboto','Poppins',sans-serif",
@@ -490,10 +446,7 @@ export default function ServicesSection() {
                 }}>
                   {(selectedService as any).longDesc}
                 </p>
-<<<<<<< HEAD
-=======
 
->>>>>>> 681f246 (Launch version-v5)
               </div>
 
               <button

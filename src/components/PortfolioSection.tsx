@@ -145,12 +145,8 @@ export default function PortfolioSection() {
   const filtered = active === 'All' ? projects : projects.filter(p => p.category === active);
 
   return (
-<<<<<<< HEAD
-    <section id="portfolio" style={{ background: 'white', padding: '80px 0' }}>
-=======
     <section id="portfolio" style={{ background: 'var(--bg-main)', padding: '80px 0', transition: 'background 0.3s ease' }}>
 
->>>>>>> 681f246 (Launch version-v5)
       <div className="container">
 
         {/* ── Section Header – Hero-matched font */}
@@ -162,12 +158,8 @@ export default function PortfolioSection() {
         >
           <div className="accent-bar" />
           <h2
-<<<<<<< HEAD
-            className="font-bold tracking-tight text-[#1F2937]"
-=======
             className="font-bold tracking-tight text-[var(--text-main)]"
 
->>>>>>> 681f246 (Launch version-v5)
             style={{
               fontFamily: "'Poppins', sans-serif",
               fontSize: 'clamp(1.4rem, 2.8vw, 2.8rem)',
@@ -175,20 +167,12 @@ export default function PortfolioSection() {
               letterSpacing: '-0.02em', marginBottom: 16,
             }}
           >
-<<<<<<< HEAD
-            My <span className="gradient-text">Portfolio</span>
-          </h2>
-          <p style={{ color: '#6B7280', fontSize: 16, maxWidth: 540, margin: '0 auto', lineHeight: 1.7, fontFamily: "'Roboto','Poppins',sans-serif" }}>
-            A showcase of our best work — from web development to digital campaigns that delivered real results.
-          </p>
-=======
             <span className="gradient-text">Portfolio</span>
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: 16, maxWidth: 540, margin: '0 auto', lineHeight: 1.7, fontFamily: "'Roboto','Poppins',sans-serif" }}>
             A showcase of our best work — from web development to digital campaigns that delivered real results.
           </p>
 
->>>>>>> 681f246 (Launch version-v5)
         </motion.div>
 
         {/* ── Filter Tabs */}
@@ -202,20 +186,12 @@ export default function PortfolioSection() {
               style={{
                 padding: '9px 22px', borderRadius: 50, fontSize: 14, fontWeight: 600,
                 fontFamily: "'Poppins',sans-serif", cursor: 'pointer', transition: 'all 0.25s ease',
-<<<<<<< HEAD
-                background: active === tab ? 'linear-gradient(90deg, #4F46E5, #7C3AED)' : '#F5F6FA',
-                color: active === tab ? 'white' : '#6B7280',
-                border: active === tab ? 'none' : '1.5px solid #E5E7EB',
-                boxShadow: active === tab ? '0 4px 14px rgba(79,70,229,0.35)' : 'none',
-              }}
-=======
                 background: active === tab ? 'linear-gradient(90deg, #4F46E5, #7C3AED)' : 'var(--bg-surface-soft)',
                 color: active === tab ? 'white' : 'var(--text-muted)',
                 border: active === tab ? 'none' : '1.5px solid var(--border-main)',
                 boxShadow: active === tab ? '0 4px 14px rgba(79,70,229,0.35)' : 'none',
               }}
 
->>>>>>> 681f246 (Launch version-v5)
             >
               {tab}
             </motion.button>
@@ -237,10 +213,6 @@ export default function PortfolioSection() {
                   transition={{ duration: 0.35, delay: i * 0.06 }}
                   whileHover={{ y: -8 }}
                   className="card"
-<<<<<<< HEAD
-                  style={{ overflow: 'hidden', cursor: 'pointer' }}
-                >
-=======
                   style={{ 
                     overflow: 'hidden', 
                     cursor: 'pointer',
@@ -251,7 +223,6 @@ export default function PortfolioSection() {
                   }}
                 >
 
->>>>>>> 681f246 (Launch version-v5)
                   {/* Card cover – gradient tint with 3D icon */}
                   <div style={{
                     height: 180,
@@ -278,14 +249,9 @@ export default function PortfolioSection() {
 
                   {/* Card body */}
                   <div style={{ padding: '24px' }}>
-<<<<<<< HEAD
-                    <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 18, marginBottom: 10 }}>{p.title}</h3>
-                    <p style={{ color: '#6B7280', fontSize: 14, lineHeight: 1.65, marginBottom: 16, fontFamily: "'Roboto','Poppins',sans-serif" }}>{p.desc}</p>
-=======
                     <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 18, marginBottom: 10, color: 'var(--text-main)' }}>{p.title}</h3>
                     <p style={{ color: 'var(--text-muted)', fontSize: 14, lineHeight: 1.65, marginBottom: 16, fontFamily: "'Roboto','Poppins',sans-serif" }}>{p.desc}</p>
 
->>>>>>> 681f246 (Launch version-v5)
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                       {p.tags.map(tag => (
                         <span key={tag} style={{

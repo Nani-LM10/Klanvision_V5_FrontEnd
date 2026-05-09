@@ -14,13 +14,6 @@
   --primary-blue: #4F46E5;
   --primary-purple: #7C3AED;
   --accent: #FF6B35;
-<<<<<<< HEAD
-  --bg-light: #F5F6FA;
-  --text-dark: #1F2937;
-  --text-light: #6B7280;
-}
-
-=======
   
   /* Light Mode (Default) */
   --bg-main: #F5F6FA;
@@ -61,33 +54,22 @@
 
 
 
->>>>>>> 681f246 (Launch version-v5)
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Poppins', 'Roboto', sans-serif;
-<<<<<<< HEAD
-  background-color: #F5F6FA;
-  color: #1F2937;
-=======
   background-color: var(--bg-main);
   color: var(--text-main);
->>>>>>> 681f246 (Launch version-v5)
   overflow-x: hidden;
   width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-<<<<<<< HEAD
-}
-
-=======
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
->>>>>>> 681f246 (Launch version-v5)
 .container {
   width: 100%;
   max-width: 1280px;
@@ -241,14 +223,6 @@ p {
 }
 
 .glass {
-<<<<<<< HEAD
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-=======
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -256,7 +230,6 @@ p {
 }
 
 
->>>>>>> 681f246 (Launch version-v5)
 /* ===== ANIMATIONS ===== */
 @keyframes float {
 
@@ -678,8 +651,6 @@ textarea.form-input {
   font-weight: 900;
 }
 
-<<<<<<< HEAD
-=======
 /* ===== FLOATING BUTTONS ===== */
 .whatsapp-float {
   position: fixed;
@@ -753,7 +724,6 @@ textarea.form-input {
   }
 }
 
->>>>>>> 681f246 (Launch version-v5)
 /* ================================================================
    RESPONSIVE DESIGN SYSTEM
    Breakpoints:
@@ -987,13 +957,8 @@ textarea.form-input {
 
   /* Hero image */
   .hero-image-wrap {
-<<<<<<< HEAD
-    width: 180px !important;
-    height: 180px !important;
-=======
     width: 160px !important;
     height: 160px !important;
->>>>>>> 681f246 (Launch version-v5)
   }
 
   /* Stats row wrap */
@@ -1094,8 +1059,6 @@ textarea.form-input {
     font-size: 11px !important;
     letter-spacing: 0.5px !important;
   }
-<<<<<<< HEAD
-=======
 
   /* Prevent text overflow on small headings */
   h1 {
@@ -1111,5 +1074,4 @@ textarea.form-input {
   overflow-x: hidden !important;
   width: 100% !important;
   position: relative !important;
->>>>>>> 681f246 (Launch version-v5)
 }

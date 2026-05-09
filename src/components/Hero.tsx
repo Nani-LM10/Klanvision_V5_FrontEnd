@@ -18,12 +18,8 @@ export default function Hero() {
 
   return (
     // Main hero section — full viewport height, gradient background, overflow hidden for decorative elements
-<<<<<<< HEAD
-    <section id="hero" className="hero-bg" style={{ height: '100vh', paddingTop: 96, paddingBottom: 80, boxSizing: 'border-box', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
-=======
     <section id="hero" className="hero-bg" style={{ height: '100vh', paddingTop: 96, paddingBottom: 80, boxSizing: 'border-box', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', background: 'var(--hero-bg)' }}>
 
->>>>>>> 681f246 (Launch version-v5)
 
       {/* ── Decorative Background Layer ────────────────────────────
           Contains blurred radial gradient blobs and a dotted grid.
@@ -60,14 +56,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-<<<<<<< HEAD
-              className="font-bold tracking-tight text-[#1F2937]"
-              style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2.8rem)', lineHeight: 1.15 }}
-=======
               className="font-bold tracking-tight text-[var(--text-main)]"
               style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2.8rem)', lineHeight: 1.15 }}
 
->>>>>>> 681f246 (Launch version-v5)
             >
               Unique, Safe, and{' '}
               <br className="hidden lg:block" />
@@ -77,23 +68,6 @@ export default function Hero() {
                 initial="hidden"
                 animate="visible"
                 variants={{
-<<<<<<< HEAD
-                  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.6 } }
-                }}
-              >
-                {"Scalable Digital Innovations".split("").map((char, i) => (
-                  <motion.span
-                    key={i}
-                    style={{ display: 'inline-block', whiteSpace: 'pre' }}
-                    variants={{
-                      hidden: { opacity: 0, x: 15 },
-                      visible: { opacity: 1, x: 0 }
-                    }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                  >
-                    {char}
-                  </motion.span>
-=======
                   visible: { transition: { staggerChildren: 0.05, delayChildren: 0.6 } }
                 }}
                 style={{ display: 'inline-flex', flexWrap: 'wrap', justifyContent: 'inherit' }}
@@ -114,7 +88,6 @@ export default function Hero() {
                       </motion.span>
                     ))}
                   </span>
->>>>>>> 681f246 (Launch version-v5)
                 ))}
               </motion.span>{' '}
               <br className="hidden md:block" />
@@ -123,28 +96,17 @@ export default function Hero() {
 
             {/* Description paragraph – short company value proposition */}
             <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-<<<<<<< HEAD
-              className="hero-description" style={{ maxWidth: 480, fontSize: 'clamp(0.8rem, 0.9vw, 0.95rem)' }}>
-              We deliver high-quality, scalable, and secure digital solutions, ensuring businesses achieve their project goals with tailored, efficient approaches.
-            </motion.p>
-
-=======
               className="hero-description" style={{ maxWidth: 480, fontSize: 'clamp(0.8rem, 0.9vw, 0.95rem)', color: 'var(--text-muted)' }}>
               We deliver high-quality, scalable, and secure digital solutions, ensuring businesses achieve their project goals with tailored, efficient approaches.
             </motion.p>
 
 
->>>>>>> 681f246 (Launch version-v5)
             {/* Feature List – three key selling points with checkmark icons */}
             <motion.ul initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="hero-features" style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
               {['High-Quality Digital Solutions', 'Scalable & Secure Architecture', 'Tailored Business Approaches'].map((f, i) => (
                 // Each item slides in from left with a staggered delay
                 <motion.li key={f} initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 + i * 0.1 }}
-<<<<<<< HEAD
-                  style={{ display: 'flex', alignItems: 'center', gap: 12, fontWeight: 500 }}>
-=======
                   style={{ display: 'flex', alignItems: 'center', gap: 12, fontWeight: 500, color: 'var(--text-main)' }}>
->>>>>>> 681f246 (Launch version-v5)
                   {/* Custom SVG checkmark icon */}
                   <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="10" fill="rgba(79,70,229,0.12)" />
@@ -152,10 +114,7 @@ export default function Hero() {
                   </svg>
                   {f}
                 </motion.li>
-<<<<<<< HEAD
-=======
 
->>>>>>> 681f246 (Launch version-v5)
               ))}
             </motion.ul>
 
@@ -183,14 +142,9 @@ export default function Hero() {
                   {/* Gradient number – Poppins 900 */}
                   <div className="gradient-text hero-stat-number">{num}</div>
                   {/* Stat label – Roboto 500 */}
-<<<<<<< HEAD
-                  <div className="hero-stat-label">{label}</div>
-                </div>
-=======
                   <div className="hero-stat-label" style={{ color: 'var(--text-muted)' }}>{label}</div>
                 </div>
 
->>>>>>> 681f246 (Launch version-v5)
               ))}
             </motion.div>
           </motion.div>
@@ -226,16 +180,10 @@ export default function Hero() {
               className="hero-image-wrap"
               style={{
                 position: 'relative', width: 240, height: 240, borderRadius: '50%', overflow: 'hidden',
-<<<<<<< HEAD
-                border: '4px solid white', boxShadow: '0 16px 48px rgba(79,70,229,0.25)',
-                background: 'linear-gradient(135deg, #EEF2FF, #F3E8FF)',
-              }}
-=======
                 border: '4px solid var(--bg-surface)', boxShadow: 'var(--card-shadow)',
                 background: 'var(--bg-surface-soft)',
               }}
 
->>>>>>> 681f246 (Launch version-v5)
             >
               <img src="/hero.png" alt="Business professional with laptop" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </motion.div>
@@ -253,18 +201,11 @@ export default function Hero() {
             {/* Bottom-left card: 5-star rating badge */}
             <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.4, type: 'spring' }}
               className="glass hero-float-card"
-<<<<<<< HEAD
-              style={{ position: 'absolute', bottom: '0%', left: '0%', borderRadius: 16, padding: '12px 18px', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }}>
-              <div className="float-card-title" style={{ color: '#FF6B35' }}><Star size={14} /> 5.0 Rating</div>
-              <div className="float-card-sub">Trusted by 50+ clients</div>
-            </motion.div>
-=======
               style={{ position: 'absolute', bottom: '0%', left: '0%', borderRadius: 16, padding: '12px 18px', boxShadow: 'var(--card-shadow)' }}>
               <div className="float-card-title" style={{ color: '#FF6B35' }}><Star size={14} /> 5.0 Rating</div>
               <div className="float-card-sub" style={{ color: 'var(--text-muted)' }}>Trusted by 50+ clients</div>
             </motion.div>
 
->>>>>>> 681f246 (Launch version-v5)
           </motion.div>
         </div>
       </div>

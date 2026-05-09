@@ -149,12 +149,8 @@ export default function TestimonialsSection() {
   const dotActive = activeIndex % N; // which original card is leading
 
   return (
-<<<<<<< HEAD
-    <section id="testimonials" style={{ background: 'white', padding: '80px 0' }}>
-=======
     <section id="testimonials" style={{ background: 'var(--bg-main)', padding: '80px 0', transition: 'background 0.3s ease' }}>
 
->>>>>>> 681f246 (Launch version-v5)
       <div className="container">
 
         {/* ── Section Header */}
@@ -166,12 +162,8 @@ export default function TestimonialsSection() {
         >
           <div className="accent-bar" />
           <h2
-<<<<<<< HEAD
-            className="font-bold tracking-tight text-[#1F2937]"
-=======
             className="font-bold tracking-tight text-[var(--text-main)]"
 
->>>>>>> 681f246 (Launch version-v5)
             style={{
               fontFamily: "'Poppins', sans-serif",
               fontSize: 'clamp(1.4rem, 2.8vw, 2.8rem)',
@@ -182,18 +174,11 @@ export default function TestimonialsSection() {
             What Our <span className="gradient-text">Clients Say</span>
           </h2>
           <p style={{
-<<<<<<< HEAD
-            color: '#6B7280', fontSize: 16, maxWidth: 540,
-            margin: '0 auto', lineHeight: 1.7,
-            fontFamily: "'Roboto','Poppins',sans-serif",
-          }}>
-=======
             color: 'var(--text-muted)', fontSize: 16, maxWidth: 540,
             margin: '0 auto', lineHeight: 1.7,
             fontFamily: "'Roboto','Poppins',sans-serif",
           }}>
 
->>>>>>> 681f246 (Launch version-v5)
             Real stories from businesses that transformed their digital presence with Klanvision.
           </p>
         </motion.div>
@@ -224,10 +209,6 @@ export default function TestimonialsSection() {
                     maxWidth: cardWidthStyle,
                     flexShrink: 0,
                     boxSizing: 'border-box',
-<<<<<<< HEAD
-                  }}
-                >
-=======
                     background: 'var(--bg-surface)',
                     boxShadow: 'var(--card-shadow)',
                     border: '1px solid var(--border-main)',
@@ -237,7 +218,6 @@ export default function TestimonialsSection() {
                   }}
                 >
 
->>>>>>> 681f246 (Launch version-v5)
                   {/* Stars */}
                   <div style={{ display: 'flex', gap: 4, marginBottom: 16 }}>
                     {Array.from({ length: t.rating }).map((_, si) => (
@@ -249,28 +229,17 @@ export default function TestimonialsSection() {
 
                   {/* Quote */}
                   <p style={{
-<<<<<<< HEAD
-                    color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 24,
-=======
                     color: 'var(--text-main)', fontSize: 15, lineHeight: 1.75, marginBottom: 24,
->>>>>>> 681f246 (Launch version-v5)
                     fontStyle: 'italic', fontFamily: "'Roboto','Poppins',sans-serif",
                   }}>
                     &ldquo;{t.text}&rdquo;
                   </p>
 
-<<<<<<< HEAD
-                  {/* Author */}
-                  <div style={{
-                    display: 'flex', alignItems: 'center', gap: 14,
-                    paddingTop: 20, borderTop: '1px solid #F3F4F6',
-=======
 
                   {/* Author */}
                   <div style={{
                     display: 'flex', alignItems: 'center', gap: 14,
                     paddingTop: 20, borderTop: '1px solid var(--border-main)',
->>>>>>> 681f246 (Launch version-v5)
                   }}>
                     <div style={{
                       width: 48, height: 48, borderRadius: '50%',
@@ -281,16 +250,10 @@ export default function TestimonialsSection() {
                       <t.icon size={22} />
                     </div>
                     <div>
-<<<<<<< HEAD
-                      <div style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 16 }}>
-                        {t.name}
-                      </div>
-=======
                       <div style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 16, color: 'var(--text-main)' }}>
                         {t.name}
                       </div>
 
->>>>>>> 681f246 (Launch version-v5)
                       <div style={{ color: '#9CA3AF', fontSize: 13, marginTop: 2, fontFamily: "'Roboto',sans-serif" }}>
                         {t.role}
                       </div>
@@ -312,12 +275,8 @@ export default function TestimonialsSection() {
                 width: i === dotActive ? 28 : 10,
                 background: i === dotActive
                   ? 'linear-gradient(90deg, #6366f1, #a855f7)'
-<<<<<<< HEAD
-                  : '#D1D5DB',
-=======
                   : 'var(--border-main)',
 
->>>>>>> 681f246 (Launch version-v5)
               }}
               transition={{ duration: 0.35 }}
               style={{ height: 10, borderRadius: 5, border: 'none', cursor: 'pointer', padding: 0 }}
@@ -341,19 +300,12 @@ export default function TestimonialsSection() {
           ].map((b) => (
             <div key={b.text} style={{
               display: 'flex', alignItems: 'center', gap: 10,
-<<<<<<< HEAD
-              background: '#F5F6FA', borderRadius: 50,
-              padding: '10px 22px', fontSize: 14, fontWeight: 600, color: '#374151',
-              fontFamily: "'Poppins',sans-serif",
-            }}>
-=======
               background: 'var(--bg-surface-soft)', borderRadius: 50,
               padding: '10px 22px', fontSize: 14, fontWeight: 600, color: 'var(--text-main)',
               fontFamily: "'Poppins',sans-serif",
               border: '1px solid var(--border-main)'
             }}>
 
->>>>>>> 681f246 (Launch version-v5)
               <span style={{ display: 'flex', alignItems: 'center', color: '#4F46E5' }}>
                 <b.icon size={18} />
               </span>

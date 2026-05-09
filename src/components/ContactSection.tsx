@@ -14,12 +14,8 @@ import { MessageSquare, Phone, Mail, MapPin, CheckCircle } from 'lucide-react';
 // ── TypingText Component ─────────────────────────────────────
 // Animates text character by character for a typing effect.
 function TypingText({ text, delay = 0 }: { text: string; delay?: number }) {
-<<<<<<< HEAD
-  const characters = text.split("");
-=======
   const characters = (text || "").split("");
 
->>>>>>> 681f246 (Launch version-v5)
   return (
     <>
       {characters.map((char, index) => (
@@ -57,53 +53,28 @@ export default function ContactSection() {
 
     try {
       // 1. Send Email Notification via FormSubmit
-<<<<<<< HEAD
-      const response = await fetch('https://formsubmit.co/ajax/support@klanvision.com', {
-=======
       const response = await fetch('https://formsubmit.co/ajax/sunnyok1433@gmail.com', {
->>>>>>> 681f246 (Launch version-v5)
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
         body: JSON.stringify({
-<<<<<<< HEAD
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          message: form.message,
-          _subject: 'New Strategic Consultation Request - KlanVision',
-=======
           "Client Name": form.name,
           "Business Email": form.email,
           "Phone Number": form.phone,
           "Project Requirements": form.message,
           "Company Banner": "https://www.klanvision.com/logo.png", // For branding in email
           _subject: `💎 New Strategic Consultation Request - ${form.name}`,
->>>>>>> 681f246 (Launch version-v5)
           _template: 'table',
           _captcha: 'false',
         }),
       });
 
-<<<<<<< HEAD
-      const result = await response.json();
-
-      if (result.success) {
-        // 2. Automatically Trigger WhatsApp Notification
-        const whatsappNumber = "917032362358";
-        const whatsappMsg = `*New Lead from KlanVision*%0A%0A*Name:* ${form.name}%0A*Email:* ${form.email}%0A*Phone:* ${form.phone}%0A*Message:* ${form.message}`;
-        
-        // This will open a new tab/window with the message ready to send
-        window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMsg}`, '_blank');
-
-=======
 
       const result = await response.json();
 
       if (result.success) {
->>>>>>> 681f246 (Launch version-v5)
         setSubmitted(true); // show thank-you screen directly
       } else {
         alert('Something went wrong. Please try again!');
@@ -119,12 +90,8 @@ export default function ContactSection() {
 
   return (
     // Section – white background with decorative blobs
-<<<<<<< HEAD
-    <section id="contact" style={{ background: 'white', padding: '80px 0', position: 'relative', overflow: 'hidden' }}>
-=======
     <section id="contact" style={{ background: 'var(--bg-main)', padding: '80px 0', position: 'relative', overflow: 'hidden', transition: 'background 0.3s ease' }}>
 
->>>>>>> 681f246 (Launch version-v5)
       {/* Decorative radial gradient blobs */}
       <div style={{ position: 'absolute', top: -100, right: -100, width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle, rgba(124,58,237,0.08), transparent)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', bottom: -80, left: -80, width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,107,53,0.08), transparent)', pointerEvents: 'none' }} />
@@ -139,14 +106,6 @@ export default function ContactSection() {
           style={{ textAlign: 'center', marginBottom: 60 }}
         >
           <div className="accent-bar" />
-<<<<<<< HEAD
-          <h2 className="font-bold tracking-tight text-[#1F2937]" style={{ marginBottom: 16 }}>
-            Connect with Our <span className="gradient-text">Team of Experts</span>
-          </h2>
-          <p style={{ color: '#6B7280', fontSize: 17, maxWidth: 560, margin: '0 auto', lineHeight: 1.7 }}>
-            Collaborate with our skilled team to bring your project ideas into reality, guided by a passion for excellence and innovation.
-          </p>
-=======
           <h2 className="font-bold tracking-tight text-[var(--text-main)]" style={{ marginBottom: 16 }}>
             Connect with Our <span className="gradient-text">Team of Experts</span>
           </h2>
@@ -155,7 +114,6 @@ export default function ContactSection() {
             Collaborate with our skilled team to bring your project ideas into reality, guided by a passion for excellence and innovation.
           </p>
 
->>>>>>> 681f246 (Launch version-v5)
         </motion.div>
 
         {/* Two-column layout: left = info, right = form */}
@@ -170,9 +128,6 @@ export default function ContactSection() {
             style={{ display: 'flex', flexDirection: 'column', gap: 24 }}
           >
             {/* Connect card – icon + heading + contact detail rows */}
-<<<<<<< HEAD
-            <div className="card" style={{ padding: '32px' }}>
-=======
             <div className="card" style={{ 
               padding: '32px',
               background: 'var(--bg-surface)',
@@ -180,22 +135,12 @@ export default function ContactSection() {
               border: '1px solid var(--border-main)'
             }}>
 
->>>>>>> 681f246 (Launch version-v5)
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start', marginBottom: 24 }}>
                 {/* Section icon */}
                 <div style={{ width: 48, height: 48, borderRadius: 14, background: 'linear-gradient(135deg, #4F46E5, #7C3AED)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 20, color: 'white' }}>
                   <MessageSquare size={24} />
                 </div>
                 <div>
-<<<<<<< HEAD
-                  <h3 style={{ fontFamily: 'sans-serif', fontWeight: 700, fontSize: 18, marginBottom: 6 }}>Looking to connect?</h3>
-                  <p style={{ color: '#6B7280', fontSize: 14, lineHeight: 1.65 }}>Looking to connect with a team of talented professionals? Please visit our contact form →</p>
-                </div>
-              </div>
-
-              {/* Divider */}
-              <div style={{ height: 1, background: '#F3F4F6', marginBottom: 24 }} />
-=======
                   <h3 style={{ fontFamily: 'sans-serif', fontWeight: 700, fontSize: 18, marginBottom: 6, color: 'var(--text-main)' }}>Looking to connect?</h3>
                   <p style={{ color: 'var(--text-muted)', fontSize: 14, lineHeight: 1.65 }}>Looking to connect with a team of talented professionals? Please visit our contact form →</p>
                 </div>
@@ -205,7 +150,6 @@ export default function ContactSection() {
               {/* Divider */}
               <div style={{ height: 1, background: 'var(--border-main)', marginBottom: 24 }} />
 
->>>>>>> 681f246 (Launch version-v5)
 
               {/* Contact detail rows – phone, email, location */}
               {[
@@ -219,16 +163,10 @@ export default function ContactSection() {
                     <c.icon size={20} />
                   </div>
                   <div>
-<<<<<<< HEAD
-                    <div style={{ color: '#9CA3AF', fontSize: 12, fontWeight: 500 }}>{c.label}</div>
-                    <div style={{ fontWeight: 600, fontSize: 14, marginTop: 2 }}>{c.val}</div>
-                  </div>
-=======
                     <div style={{ color: 'var(--text-muted)', fontSize: 12, fontWeight: 500 }}>{c.label}</div>
                     <div style={{ fontWeight: 600, fontSize: 14, marginTop: 2, color: 'var(--text-main)' }}>{c.val}</div>
                   </div>
 
->>>>>>> 681f246 (Launch version-v5)
                 </div>
               ))}
             </div>
@@ -295,11 +233,7 @@ export default function ContactSection() {
           </motion.div>
 
           {/* Right – Contact Form */}
-<<<<<<< HEAD
-          <motion.div
-=======
            <motion.div
->>>>>>> 681f246 (Launch version-v5)
             id="contact-form"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -307,9 +241,6 @@ export default function ContactSection() {
             transition={{ duration: 0.7 }}
             style={{ height: '100%' }}
           >
-<<<<<<< HEAD
-            <div className="card" style={{ padding: '40px 40px 10px', height: '100%', display: 'flex', flexDirection: 'column' }}>
-=======
             <div className="card" style={{ 
               padding: '40px 40px 10px', 
               height: '100%', 
@@ -320,7 +251,6 @@ export default function ContactSection() {
               border: '1px solid var(--border-main)'
             }}>
 
->>>>>>> 681f246 (Launch version-v5)
               {submitted ? (
                 // Success state – shown after successful form submission
                 <motion.div
@@ -354,35 +284,22 @@ export default function ContactSection() {
                     initial={{ y: 10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
-<<<<<<< HEAD
-                    style={{ fontFamily: 'sans-serif', fontWeight: 900, fontSize: 32, marginBottom: 12, color: '#111827' }}
-=======
                     style={{ fontFamily: 'sans-serif', fontWeight: 900, fontSize: 32, marginBottom: 12, color: 'var(--text-main)' }}
->>>>>>> 681f246 (Launch version-v5)
                   >
                     Thanks for <span className="gradient-text">Contacting Us!</span>
                   </motion.h3>
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 681f246 (Launch version-v5)
                   <motion.div
                     initial={{ y: 10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.5 }}
                     style={{ display: 'flex', flexDirection: 'column', gap: 12 }}
                   >
-<<<<<<< HEAD
-                    <p style={{ color: '#6B7280', fontSize: 16, lineHeight: 1.6, maxWidth: 320 }}>
-                      Your professional inquiry has been received and our team has been notified via <b>Email & WhatsApp</b>.
-                    </p>
-=======
                     <p style={{ color: 'var(--text-muted)', fontSize: 16, lineHeight: 1.6, maxWidth: 320 }}>
                       Your professional inquiry has been received and our team has been notified via <b>Email</b>.
                     </p>
 
->>>>>>> 681f246 (Launch version-v5)
                     <p style={{ color: '#4F46E5', fontWeight: 700, fontSize: 14, letterSpacing: 0.5 }}>
                       WE WILL REACH OUT WITHIN 24 HOURS
                     </p>
@@ -421,16 +338,10 @@ export default function ContactSection() {
                       <TypingText text="Ignite Your Next Project?" delay={0.3} />
                     </span>
                   </h3>
-<<<<<<< HEAD
-                  <p style={{ color: '#6B7280', marginBottom: 28, fontSize: 14.5, lineHeight: 1.6 }}>
-                    <TypingText text="Fill out the form below and our experts will reach out to you within 24 hours." delay={1.2} />
-                  </p>
-=======
                   <p style={{ color: 'var(--text-muted)', marginBottom: 28, fontSize: 14.5, lineHeight: 1.6 }}>
                     <TypingText text="Fill out the form below and our experts will reach out to you within 24 hours." delay={1.2} />
                   </p>
 
->>>>>>> 681f246 (Launch version-v5)
                   <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 24, flex: 1 }}>
 
                     {/* Name field */}

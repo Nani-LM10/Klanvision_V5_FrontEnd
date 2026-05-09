@@ -52,12 +52,8 @@ function StatNumber({ value }: { value: string }) {
 // ── TypingText Component ─────────────────────────────────────
 // Animates text character by character for a typing effect.
 function TypingText({ text, delay = 0 }: { text: string; delay?: number }) {
-<<<<<<< HEAD
-  const characters = text.split("");
-=======
   const characters = (text || "").split("");
 
->>>>>>> 681f246 (Launch version-v5)
   return (
     <>
       {characters.map((char, index) => (
@@ -78,12 +74,8 @@ function TypingText({ text, delay = 0 }: { text: string; delay?: number }) {
 export default function WhyPartner() {
   return (
     // Section – white background
-<<<<<<< HEAD
-    <section id="why-partner" style={{ background: 'white', padding: '80px 0' }}>
-=======
     <section id="why-partner" style={{ background: 'var(--bg-main)', padding: '80px 0', transition: 'background 0.3s ease' }}>
 
->>>>>>> 681f246 (Launch version-v5)
       <div className="container">
 
         {/* Section Header – accent bar + heading + subtitle */}
@@ -94,12 +86,8 @@ export default function WhyPartner() {
           style={{ textAlign: 'center', marginBottom: 56 }}
         >
           <div className="accent-bar" />
-<<<<<<< HEAD
-          <h2 className="font-bold tracking-tight text-[#1F2937]" style={{ marginBottom: 16 }}>
-=======
           <h2 className="font-bold tracking-tight text-[var(--text-main)]" style={{ marginBottom: 16 }}>
 
->>>>>>> 681f246 (Launch version-v5)
             <TypingText text="Why Partner " />
             <span 
               className="gradient-text" 
@@ -115,16 +103,10 @@ export default function WhyPartner() {
               <TypingText text="with Us?" delay={0.4} />
             </span>
           </h2>
-<<<<<<< HEAD
-          <p style={{ color: '#6B7280', fontSize: 17, maxWidth: 600, margin: '0 auto', lineHeight: 1.7 }}>
-            <TypingText text="Expertise in Website, Mobile App Design, and Digital Marketing Solutions." delay={1.2} />
-          </p>
-=======
           <p style={{ color: 'var(--text-muted)', fontSize: 17, maxWidth: 600, margin: '0 auto', lineHeight: 1.7 }}>
             <TypingText text="Expertise in Website, Mobile App Design, and Digital Marketing Solutions." delay={1.2} />
           </p>
 
->>>>>>> 681f246 (Launch version-v5)
         </motion.div>
 
         {/* Reason Cards – 1 col mobile, 2 cols sm, 3 cols lg */}
@@ -150,13 +132,6 @@ export default function WhyPartner() {
                 alignItems: 'center', 
                 textAlign: 'center',
                 cursor: 'pointer',
-<<<<<<< HEAD
-                background: 'white',
-                border: '1px solid #f3f4f6',
-                borderRadius: '24px',
-                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-              }}
-=======
                 background: 'var(--bg-surface)',
                 border: '1px solid var(--border-main)',
                 borderRadius: '24px',
@@ -164,7 +139,6 @@ export default function WhyPartner() {
                 boxShadow: 'var(--card-shadow)'
               }}
 
->>>>>>> 681f246 (Launch version-v5)
             >
               {/* Gradient icon badge with matching glow */}
               <div style={{
@@ -178,16 +152,10 @@ export default function WhyPartner() {
                 <r.icon size={28} strokeWidth={2.2} />
               </div>
               <div>
-<<<<<<< HEAD
-                <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 18, marginBottom: 10, color: '#1F2937' }}>{r.title}</h3>
-                <p style={{ color: '#6B7280', fontSize: 14, lineHeight: 1.7 }}>{r.desc}</p>
-              </div>
-=======
                 <h3 style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 18, marginBottom: 10, color: 'var(--text-main)' }}>{r.title}</h3>
                 <p style={{ color: 'var(--text-muted)', fontSize: 14, lineHeight: 1.7 }}>{r.desc}</p>
               </div>
 
->>>>>>> 681f246 (Launch version-v5)
             </motion.div>
           ))}
         </div>
@@ -211,20 +179,12 @@ export default function WhyPartner() {
               style={{ 
                 position: 'relative', 
                 padding: '32px 20px',
-<<<<<<< HEAD
-                background: 'white',
-                border: '1px solid #f3f4f6',
-                boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.05)',
-                overflow: 'visible' // allow the badge to hang off
-              }}
-=======
                 background: 'var(--bg-surface)',
                 border: '1px solid var(--border-main)',
                 boxShadow: 'var(--card-shadow)',
                 overflow: 'visible' // allow the badge to hang off
               }}
 
->>>>>>> 681f246 (Launch version-v5)
             >
               {/* Pulsing "3D" LIVE indicator top-right */}
               <div style={{ 
@@ -234,15 +194,6 @@ export default function WhyPartner() {
                 display: 'flex', 
                 alignItems: 'center', 
                 gap: 6,
-<<<<<<< HEAD
-                background: 'white',
-                padding: '6px 12px',
-                borderRadius: '20px',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.1), inset 0 -2px 4px rgba(0,0,0,0.05)',
-                border: '1px solid #f3f4f6',
-                zIndex: 10
-              }}>
-=======
                 background: 'var(--bg-surface-soft)',
                 padding: '6px 12px',
                 borderRadius: '20px',
@@ -251,7 +202,6 @@ export default function WhyPartner() {
                 zIndex: 10
               }}>
 
->>>>>>> 681f246 (Launch version-v5)
                 <motion.div
                   animate={{ 
                     scale: [1, 1.5, 1],
@@ -261,16 +211,10 @@ export default function WhyPartner() {
                   transition={{ duration: 2, repeat: Infinity }}
                   style={{ width: 8, height: 8, borderRadius: '50%', background: '#10B981' }}
                 />
-<<<<<<< HEAD
-                <span style={{ fontSize: 10, fontWeight: 800, color: '#1F2937', letterSpacing: 0.5 }}>. LIVE</span>
-              </div>
-
-=======
                 <span style={{ fontSize: 10, fontWeight: 800, color: 'var(--text-main)', letterSpacing: 0.5 }}>. LIVE</span>
               </div>
 
 
->>>>>>> 681f246 (Launch version-v5)
               {/* Graphic Icon Badge */}
               <div style={{
                 width: 60,
@@ -289,20 +233,12 @@ export default function WhyPartner() {
               </div>
 
               {/* Animated counter number */}
-<<<<<<< HEAD
-              <div className="text-[#1F2937]" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: 38, lineHeight: 1.1 }}>
-                <StatNumber value={s.num} />
-              </div>
-              <div style={{ color: '#6B7280', fontSize: 14, marginTop: 8, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{s.label}</div>
-            </motion.div>
-=======
               <div style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 800, fontSize: 38, lineHeight: 1.1, color: 'var(--text-main)' }}>
                 <StatNumber value={s.num} />
               </div>
               <div style={{ color: 'var(--text-muted)', fontSize: 14, marginTop: 8, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{s.label}</div>
             </motion.div>
 
->>>>>>> 681f246 (Launch version-v5)
           ))}
         </motion.div>
 

@@ -344,12 +344,8 @@ const services = [
 
 export default function StrategicServices() {
   return (
-<<<<<<< HEAD
-    <section id="strategic-services" style={{ background: 'white', padding: '80px 0' }}>
-=======
     <section id="strategic-services" style={{ background: 'var(--bg-main)', padding: '80px 0', transition: 'background 0.3s ease' }}>
 
->>>>>>> 681f246 (Launch version-v5)
       <div className="container">
 
         {/* ── Section Header */}
@@ -361,12 +357,8 @@ export default function StrategicServices() {
         >
           <div className="accent-bar" />
           <h2
-<<<<<<< HEAD
-            className="font-bold tracking-tight text-[#1F2937]"
-=======
             className="font-bold tracking-tight text-[var(--text-main)]"
 
->>>>>>> 681f246 (Launch version-v5)
             style={{
               fontFamily: "'Poppins', sans-serif",
               fontSize: 'clamp(1.4rem, 2.8vw, 2.8rem)',
@@ -397,10 +389,6 @@ export default function StrategicServices() {
                 textAlign: 'center', gap: 14, cursor: 'pointer',
                 borderTop: `3px solid ${s.border}`,
                 position: 'relative', overflow: 'hidden',
-<<<<<<< HEAD
-              }}
-            >
-=======
                 background: 'var(--bg-surface)',
                 boxShadow: 'var(--card-shadow)',
                 border: '1px solid var(--border-main)',
@@ -408,7 +396,6 @@ export default function StrategicServices() {
               }}
             >
 
->>>>>>> 681f246 (Launch version-v5)
               {/* Subtle glow backdrop */}
               <div style={{
                 position: 'absolute', top: -20, left: '50%', transform: 'translateX(-50%)',
@@ -430,27 +417,16 @@ export default function StrategicServices() {
               </motion.div>
 
               {/* Label */}
-<<<<<<< HEAD
-              <span style={{ fontWeight: 700, fontSize: 14, lineHeight: 1.3, color: '#1F2937', position: 'relative', zIndex: 1 }}>
-=======
               <span style={{ fontWeight: 700, fontSize: 14, lineHeight: 1.3, color: 'var(--text-main)', position: 'relative', zIndex: 1 }}>
->>>>>>> 681f246 (Launch version-v5)
                 {s.label}
               </span>
 
               {/* Short description */}
-<<<<<<< HEAD
-              <span style={{ fontSize: 12, color: '#6B7280', lineHeight: 1.5, position: 'relative', zIndex: 1 }}>
-                {s.desc}
-              </span>
-
-=======
               <span style={{ fontSize: 12, color: 'var(--text-muted)', lineHeight: 1.5, position: 'relative', zIndex: 1 }}>
                 {s.desc}
               </span>
 
 
->>>>>>> 681f246 (Launch version-v5)
               {/* Bottom accent line */}
               <div style={{ width: 36, height: 3, borderRadius: 2, background: s.border, opacity: 0.7 }} />
             </motion.div>
