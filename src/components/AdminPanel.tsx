@@ -1079,6 +1079,13 @@ export default function AdminPanel() {
               />
             )}
             {activeTab === 'settings' && (
+              <SettingsView
+                theme={theme} setTheme={setTheme}
+                accentColor={accentColor} setAccentColor={setAccentColor}
+                glassIntensity={glassIntensity} setGlassIntensity={setGlassIntensity}
+                twoFactor={twoFactor} setTwoFactor={setTwoFactor}
+                maintenanceMode={maintenanceMode} setMaintenanceMode={setMaintenanceMode}
+                platformLogo={platformLogo} setPlatformLogo={setPlatformLogo}
                 companyName={companyName} setCompanyName={setCompanyName}
                 addActivity={addActivity}
               />
